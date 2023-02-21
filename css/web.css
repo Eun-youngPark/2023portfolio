@@ -1,0 +1,253 @@
+@charset "utf-8";
+*{margin: 0; padding: 0; font-family: 'Barlow', sans-serif; font-family: 'S-CoreDream-3Light';}
+ul{list-style: none;}
+a{color: #000; text-decoration: none;}
+@font-face {
+  font-family: 'S-CoreDream-3Light';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body{
+  background: url(/images/bgi.png) no-repeat center ;
+  background-size: cover;
+}
+
+/* [헤더] */
+.header{
+  width: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+
+.header .header-wrap{
+  max-width: 73%;
+  display: flex;
+  margin: 0 auto;
+}
+
+.header .header-wrap .logo{
+  flex-basis: 10%;
+  text-align: center;
+  padding-top: 1.875rem;
+}
+.header .header-wrap .nav{
+  flex-basis: 90%;
+}
+.header .header-wrap .nav ul{
+  display: flex;
+  justify-content: space-between;
+  width: 67%;
+  margin-left: 18.75rem;
+  height: 8.125rem;
+  top: 0;
+}
+.header .header-wrap .nav ul li:nth-child(2){
+  height: 8.125rem;
+  border-left: 0.094rem solid #000;
+}
+.header .header-wrap .nav ul li{
+  height: 6.25rem;
+  line-height: 6.25rem;
+  border-left: 0.063rem solid #9fa0a0;
+}
+.header .header-wrap .nav ul li:nth-child(2) a{
+  font-size: 1.75rem;
+  font-family: 'Barlow';
+  font-weight: 400;
+  color: #000;
+}
+.header .header-wrap .nav ul li a{
+  padding-left: 0.625rem;
+  font-size: 1.375rem;
+  font-family: 'Barlow';
+  font-weight: 300;
+  color: #9fa0a0;
+}
+
+
+/* [풀페이지] */
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span{
+  background-color: rgba(211, 193, 171, 0.42);
+}
+/* 네비 색 바꾸기 */
+
+#fp-nav ul li .fp-tooltip{
+  background-color: #d2c0aa; 
+  color: #fff; 
+  padding: 5px 20px; 
+  border-radius: 20px; 
+  font-size: 14px; 
+  font-weight: 400;
+  font-family: 'Barlow'; 
+  text-align: center;
+}
+/* 네비 위에 마우스올렸을때 글씨 나오는  */
+
+#fp-nav ul li .fp-tooltip.right{
+  top: -6px;
+}
+/* 글씨박스랑 네비 위치랑 맞추기 */
+.fp-tableCell{
+  height: auto !important;
+}
+
+
+.fp-slidesNav{
+  text-align: center;
+}
+.fullpage{
+  width: 100%;
+  height: 100%;
+}
+.fullpage .section{
+  overflow: hidden;
+}
+.fullpage .section .work-wrap{
+  top: 0;
+  height: 100%;
+  max-width: 73%;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+.fullpage .section .work-wrap .work-img{
+  flex-basis: 60%;
+  position: relative;
+  bottom: 200px;
+}
+.fullpage .section .work-wrap .work-img img{
+  width: 100%;
+}
+.fullpage .section .work-wrap .work-img .pc{
+  width: 85%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  overflow: hidden;
+}
+.fullpage .section .work-wrap .work-img .pc::after{
+  content: "";
+  position: absolute;
+  width: 97%;
+  height: 68%;
+  background: url(/images/nivea_pc.png);
+  left: 10px;
+  top: 15px;
+  background-size: cover;
+  background-position: center top;
+  transition: 5s;
+  border-radius: 5px;
+}
+.fullpage .section .work-wrap .work-img > div:hover::after{
+  background-position: center bottom;
+}
+
+.fullpage .section .work-wrap .work-img .tab{
+  width: 36%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+.fullpage .section .work-wrap .work-img .tab::after{
+  content: "";
+  position: absolute;
+  width: 96%;
+  height: 93%;
+  background: url(/images/nivea_tab.png);
+  left: 6px;
+  top: 6px;
+  background-size: cover;
+  background-position: center top;
+  transition: 5s;
+  border-radius: 7px;
+}
+
+.fullpage .section .work-wrap .work-img .mob{
+  width: 18%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+.fullpage .section .work-wrap .work-img .mob::after{
+  content: "";
+  position: absolute;
+  width: 94%;
+  height: 94%;
+  background: url(/images/nivea_mob.png);
+  left: 5px;
+  top: 6px;
+  background-size: cover;
+  background-position: center top;
+  transition: 5s;
+  border-radius: 20px;
+}
+
+.fullpage .section .work-wrap .work-desc{
+  flex-basis: 43%;
+  padding-left: 30px;
+  padding-bottom: 200px;
+}
+.fullpage .section .work-wrap .work-desc > p{
+  font-size: 5.625rem;
+  font-family: 'Barlow';
+  letter-spacing: -0.5rem;
+  color: #9fa0a0;
+  font-weight: lighter;
+  padding-top: 240px;
+  padding-bottom: 125px;
+}
+.fullpage .section .work-wrap .work-desc .item{
+  width: 100%;
+  display: flex;
+  position: relative;
+  padding-bottom: 65px;
+  /* padding-top: 125px; */
+}
+.fullpage .section .work-wrap .work-desc .item .title{
+  flex-basis: 30%;
+  line-height: 40px;
+}
+.fullpage .section .work-wrap .work-desc .item ul li{
+  font-size: 1.25rem;
+  font-family: 'Barlow';
+  color: #3e3a39;
+  font-weight: 500;
+}
+.fullpage .section .work-wrap .work-desc .item .desc{
+  flex-basis: 70%;
+  line-height: 40px;
+}
+.fullpage .section .work-wrap .work-desc .item .desc li{
+  font-size: 1.25rem;
+  font-family: 'Barlow';
+  color: #3e3a39;
+  font-weight: 400;
+}
+.fullpage .section .work-wrap .work-desc .item .desc li:last-child{
+  font-family: 'S-CoreDream-3Light';
+  font-size: 1.125rem;
+  padding-top: 16px;
+  line-height: 23px;
+}
+.fullpage .section .work-wrap .work-desc .btn ul{
+  display: flex; justify-content: space-around;
+}
+.fullpage .section .work-wrap .work-desc .btn ul li{
+  padding: 2% 6%;
+  background-color: #d2c0aa;
+  border-radius: 50px;
+}
+.fullpage .section .work-wrap .work-desc .btn ul li a{
+  font-family: 'Barlow';
+  color: #3e3a39;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
