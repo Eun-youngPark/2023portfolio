@@ -13,5 +13,19 @@ $("document").ready(function () {
 		backDelay: 5000,
   })
 
+  $("html, body").contextmenu(function(e){
+    e.preventDefault();
+    let x = e.pageX;
+    let y = e.pageY;
+    console.log("가로:"+x , "세로:"+y)
+    $(".menu").css("left", x+"px").css("top", y+"px").show()
+  })
+  // 전체
 
+  $("html, body").click(function(){
+    $(".menu").hide()
+  })
+
+
+  
 })//jq

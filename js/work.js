@@ -61,8 +61,21 @@ $(".window-content").scroll(function(){
 
 
 
+/* [up arrow icon] */
+$(window).scroll(function(){
+  let pos = $(this).scrollTop()
 
-
+  if(pos > 100){
+    $(".aside").addClass("on")
+  } else {
+    $(".aside").removeClass("on")
+  }
+})
+$(".aside").click(function(){
+  $("html, body").stop().animate({
+    scrollTop:0
+  }, 600)
+})
 
 
 
